@@ -1,32 +1,39 @@
 package com.example.numberstorage
 
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        val numbers = arrayOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
 
-
-
-
-
-
-
-
-
-
-
+        // MUST come before findViewById
         setContentView(R.layout.activity_main)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+
+        // Connect Kotlin to XML views
+        val btnAdd = findViewById<Button>(R.id.btnAdd)
+        val editTextNumberInput =
+            findViewById<EditText>(R.id.editTextNumberInput)
+
+        val numbers = IntArray(10)
+        var index = 0
+
+        btnAdd.setOnClickListener {
+
+            if (index < 10) {
+
+                val number =
+                    editTextNumberInput.text.toString().toInt()
+
+                numbers[index] = number
+
+                index++
+            }
         }
     }
 }

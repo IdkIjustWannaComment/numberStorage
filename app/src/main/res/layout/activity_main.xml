@@ -8,6 +8,7 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/edtMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!"
@@ -18,7 +19,7 @@
         app:layout_constraintVertical_bias="0.56" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Button"
@@ -26,7 +27,7 @@
         tools:layout_editor_absoluteY="264dp" />
 
     <EditText
-        android:id="@+id/editTextNumber"
+        android:id="@+id/editTextNumberInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
